@@ -273,6 +273,19 @@ parent.Fulfill()
 
 ---
 
+## Files Structure
+```text
+ccx/
+├─ go.mod
+├─ README.md
+├─ ccx.go
+└─ examples/
+   └─ video_publish/
+      └─ main.go
+```
+
+---
+
 ## License
 
 Apache-2.0 (or your preference).
