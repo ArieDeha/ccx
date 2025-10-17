@@ -13,7 +13,7 @@
 ## Install
 
 ```bash
-go get github.com/yourorg/ccx@latest
+go get github.com/ArieDeha/ccx@latest
 ```
 
 ---
@@ -38,21 +38,21 @@ child.Fulfill()
 
 ## Using Policies (optional, via separate module)
 
-If you want threshold-style governance (“if params exceed X, then adjust/cancel”), use the **separate** policy module `github.com/yourorg/ccxpolicy`. The **ccx** core stays domain-agnostic; it only provides adapters to *evaluate* and *enforce* policies.
+If you want threshold-style governance (“if params exceed X, then adjust/cancel”), use the **separate** policy module `github.com/ArieDeha/ccxpolicy`. The **ccx** core stays domain-agnostic; it only provides adapters to *evaluate* and *enforce* policies.
 
 ### 1) Install
 
 ```bash
-go get github.com/yourorg/ccx@latest
-go get github.com/yourorg/ccxpolicy@latest
+go get github.com/ArieDeha/ccx@latest
+go get github.com/ArieDeha/ccxpolicy@latest
 ```
 
 ### 2) Define and register your policies (in your app)
 
 ```go
 import (
-    ccx "github.com/yourorg/ccx"
-    policy "github.com/yourorg/ccxpolicy"
+    ccx "github.com/ArieDeha/ccx"
+    policy "github.com/ArieDeha/ccxpolicy"
 )
 
 // Example: cap transcode quality; if above 1080, adjust to 1080.
@@ -269,7 +269,7 @@ parent.Fulfill()
 * **Thread-safe** parameter adjustments (mutex-protected) and lightweight lineage registry.
 * **Deterministic** “last-writer-wins” adjustments; use idempotent, namespaced keys.
 * **Interop**: `*ccx.Ctx` embeds `context.Context`, so you can pass it anywhere a `context.Context` is expected.
-* **Policies live outside**: pair with `github.com/yourorg/ccxpolicy` when you want declarative thresholds.
+* **Policies live outside**: pair with `github.com/ArieDeha/ccxpolicy` when you want declarative thresholds.
 
 ---
 
